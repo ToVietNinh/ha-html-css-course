@@ -1,0 +1,189 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Phong cách toàn cục */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #4a4a4a;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ff6a00, #ee0979);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Header */
+header {
+  background: #00bcd4;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Container nội dung */
+.container {
+  max-width: 1000px;
+  margin: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Văn bản Header */
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+/* Nội dung chính */
+.bio, .interests, .career {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  border-left: 5px solid #ff6a00;
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+
+p, ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Liên kết */
+a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff6a00;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+/* Hiệu ứng múa */
+.dancer {
+  position: relative;
+  width: 60px;
+  height: 100px;
+  margin: 20px auto;
+  background-color: #00bcd4;
+  border-radius: 30px;
+  animation: dancing 2s ease-in-out infinite;
+}
+
+/* Tay */
+.dancer::before, .dancer::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 80px;
+  height: 12px;
+  background-color: #00bcd4;
+  border-radius: 6px;
+  transform: translateX(-50%) rotate(30deg);
+  animation: armWave 2s ease-in-out infinite;
+}
+
+/* Chân */
+.left-leg, .right-leg {
+  position: absolute;
+  bottom: -10px;
+  width: 12px;
+  height: 60px;
+  background-color: #00bcd4;
+  border-radius: 6px;
+  animation: legSwing 1.5s ease-in-out infinite;
+}
+
+.left-leg {
+  left: 5px;
+  transform-origin: top;
+}
+
+.right-leg {
+  right: 5px;
+  transform-origin: top;
+}
+
+/* Hiệu ứng động */
+@keyframes dancing {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes armWave {
+  0%, 100% {
+    transform: translateX(-50%) rotate(30deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-30deg);
+  }
+}
+
+@keyframes legSwing {
+  0%, 100% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+/* Hiệu ứng chuyển động mượt */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+  }
+  50% {
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+  }
+}
